@@ -1,8 +1,8 @@
 import os
 import random
 
-user = os.getenv('USER')
-path = f'/home/{user}/Pictures/Wallpapers/'
+home = os.getenv('HOME')
+path = f'{home}/Pictures/Wallpapers/'
 
 list = os.listdir(path)
 randomValue = random.randint(0, len(list) - 1)
