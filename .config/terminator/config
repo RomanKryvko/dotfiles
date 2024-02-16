@@ -1,0 +1,38 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.85
+    background_type = transparent
+    font = Terminus Bold 18
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    use_system_font = False
+    bold_is_bright = True
+    title_use_system_font = False
+    title_font = Terminus 20
+  [[solid-color]]
+    background_darkness = 1.0
+    font = Terminus Bold 18
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    use_system_font = False
+    bold_is_bright = True
+    title_use_system_font = False
+    title_font = Terminus 20
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
+  [[Command]]
+    commands = greeting.sh
