@@ -1,0 +1,21 @@
+[$Version]
+update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
+
+[General]
+clipboardGroup=PostScreenshotCopyImage
+launchAction=UseLastUsedCapturemode
+printKeyRunningAction=StartNewInstance
+
+[ImageSave]
+imageCompressionQuality=100
+lastImageSaveAsLocation=file:///home/roman/Pictures/123445.png
+lastImageSaveLocation=file:///home/roman/Pictures/123445.png
+translatedScreenshotsFolder=Screenshots
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Pictures/123445.png
+Recent URLs[$e]=file:$HOME/Pictures/
+detailViewIconSize=16
+
+[VideoSave]
+translatedScreencastsFolder=Screencasts
