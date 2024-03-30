@@ -220,7 +220,7 @@ exec_always --no-startup-id xrandr --output Virtual1 --mode 1920x1080
 
 # Display background
 #exec_always --no-startup-id feh --bg-center /home/roman/Pictures/wallpapers/wp1.jpg
-exec_always --no-startup-id $HOME/.config/scripts/set-wallpaper.sh
+exec_always --no-startup-id $HOME/.config/scripts/set-wallpaper.sh $HOME/Pictures/Wallpapers
 
 # Key binding for i3 lock
 # bindsym $mod+b exec --no-startup-id i3lock
