@@ -62,8 +62,8 @@ bindsym $mod+F4 kill
 
 # start rofi (a program launcher)
 # bindsym $mod+Shift+d exec --no-startup-id rofi -config $HOME/.config/rofi/rofi.rasi -show run
-bindsym $mod+Super_L exec --no-startup-id rofi -show window -config $HOME/.config/rofi/old-rofi.rasi
-bindsym $mod+d exec rofi -i -show drun -modi drun -show-icons -config $HOME/.config/rofi/old-rofi.rasi
+bindsym $mod+Super_L exec --no-startup-id rofi -show window -config $HOME/.config/rofi/rofi.rasi
+bindsym $mod+d exec rofi -i -show drun -modi drun -show-icons -config $HOME/.config/rofi/rofi.rasi
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"

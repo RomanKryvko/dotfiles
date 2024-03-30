@@ -18,7 +18,7 @@
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
     alternate-active-background: rgba ( 75, 81, 96, 89 % );
-    background:                  rgba ( 45, 48, 59, 95 % );
+    background:                  rgba ( 45, 48, 59, 100 % );
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
@@ -37,7 +37,8 @@
 window {
     background-color: @background;
     border:           1;
-    padding:          5;
+    border-radius:    10;
+    padding:          10;
 }
 mainbox {
     border:  0;
@@ -56,7 +57,7 @@ listview {
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
     spacing:      2px ;
-    scrollbar:    true;
+    scrollbar:    false;
     columns:	  4;
     lines:	  14;
     padding:      2px 0px 0px ;
@@ -105,13 +106,6 @@ element.alternate.active {
     background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
 }
-scrollbar {
-    width:        4px ;
-    border:       0;
-    handle-color: @normal-foreground;
-    handle-width: 8px ;
-    padding:      0;
-}
 mode-switcher {
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
@@ -127,7 +121,7 @@ button.selected {
 inputbar {
     spacing:    0;
     text-color: @normal-foreground;
-    padding:    1px ;
+    padding:    10px ;
 }
 case-indicator {
     spacing:    0;
@@ -146,11 +140,12 @@ inputbar {
 }
 textbox-prompt-colon {
     expand:     false;
-    str:        ":";
+    str:        ">>>";
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
 }
 
 configuration {
-    font: "Figtree 13";
+    //font: "Figtree 13";
+    font: "Source Code Pro 16";
 }
