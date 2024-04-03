@@ -1,7 +1,6 @@
 #!/bin/bash
-#work_path=$HOME/Pictures/Wallpapers 
-work_path=$1
-files=($(ls $work_path))
-file_count=$(ls $work_path | wc -l) 
+work_path="$1"
+files=($(find $work_path -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \)))
+file_count=${#files[@]} 
 number=$(($RANDOM % $file_count))
-feh --bg-fill $work_path/${files[$number]} 
+feh --bg-fill ${files[$number]} 
