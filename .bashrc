@@ -10,9 +10,12 @@ alias grep='grep --color=auto'
 alias nightmode='redshift -P -O 5000'
 alias daymode='redshift -x'
 alias pacman-update='date >> update-log.txt && sudo pacman -Syu | tee -a update-log.txt'
-alias todo='~/.local/bin/todo-app/todo'
 alias copy='xsel -ib'
 alias paste='xsel -ob'
+
+# My programs
+alias wp='~/.local/bin/cppalery/cppalery ~/Pictures/Wallpapers'
+alias todo='~/.local/bin/todo-app/todo'
 
 parse_git_branch() {
 if [ "$PWD" != "$HOME" ]; then
