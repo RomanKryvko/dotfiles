@@ -6,4 +6,4 @@ mv $config $tmp
 mv $oldConfig $config
 mv $tmp $oldConfig
 #rm $tmp
-i3-msg restart
+i3-msg reload
