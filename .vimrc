@@ -64,3 +64,32 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Toggle nerd tree
 nmap <F6> :NERDTreeToggle<CR>
+
+" Tabs and indents
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" Statusline
+set laststatus=2
+set noshowmode
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'Gitbranch'
+      \ },
+      \ }
+function Gitbranch()
+  let head = gitbranch#name()
+  if head != ""
+    let head = "\ue0a0 " .. head
+  endif
+  return head
+endfunction
