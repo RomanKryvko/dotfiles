@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INPUT=$(echo -e 'CANCEL\nSHUTDOWN\nREBOOT\nSLEEP\nEXIT I3' | rofi -dmenu)
+INPUT=$(echo -e 'CANCEL\nSHUTDOWN\nREBOOT\nSLEEP\nEXIT I3' | rofi -dmenu -config $HOME/.config/rofi/rofi.rasi)
 
 case $INPUT in
 	"SHUTDOWN")
