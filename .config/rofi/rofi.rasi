@@ -33,12 +33,13 @@
     alternate-active-foreground: @active-foreground;
     active-background:           rgba ( 36, 39, 43, 100 % );
     selected-active-background:  rgba ( 68, 145, 237, 100 % );
-    inputbar:                    rgba ( 76, 86, 106, 100% );
+    inputbar:                    rgba ( 76, 86, 106, 100 % );
 }
 window {
     background-color: @background;
-    border:           0;
+    border:           4;
     border-radius:    20;
+    border-color:     @foreground;
     padding:          10;
     width:            60%;
 }
