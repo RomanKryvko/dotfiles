@@ -22,5 +22,5 @@ if [ "$PWD" != "$HOME" ]; then
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 fi
 }
-export PS1='┌─\[\e[92m\](\u\[\e[0m\]@\[\e[92m\]\h)\[\e[0m\]─[\[\e[94m\]\w\[\e[0m\]]\[\e[93m\]$(parse_git_branch)\n\[\e[0m\]└─\$ '
+export PS1='┌─\[\e[32m\](\u\[\e[0m\]@\[\e[32m\]\h)\[\e[0m\]─[\[\e[94m\]\w\[\e[0m\]]\[\e[93m\]$(parse_git_branch)\n\[\e[0m\]└─\$ '
 source /usr/share/nvm/init-nvm.sh
