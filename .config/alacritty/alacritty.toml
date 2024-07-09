@@ -1,0 +1,35 @@
+[window]
+opacity = 0.90
+
+[font]
+normal = { family = "Terminus", style = "Bold" }
+bold = { family = "Terminus", style = "Bold" }
+italic = { family = "Ubuntu Mono", style = "Italic" }
+bold_italic = { family = "Ubuntu Mono", style = "Bold Italic" }
+size = 14
+
+[colors]
+draw_bold_text_with_bright_colors = true
+[colors.primary]
+foreground = "#ebdbb2"
+background = "#282828"
+
+[colors.normal]
+black = "#555555"
+white = "#ffffff"
+red = "#ff5555"
+green = "#55ff55"
+yellow = "#ffff55"
+blue = "#5555ff"
+magenta = "#ff55ff"
+cyan = "#55ffff"
+
+[colors.bright]
+black = "#1d2021"
+white = "#aaaaaa"
+red = "#aa0000"
+green = "#00aa00"
+yellow = "#aa5500"
+blue = "#0000aa"
+magenta = "#aa00aa"
+cyan = "#00aaaa"
