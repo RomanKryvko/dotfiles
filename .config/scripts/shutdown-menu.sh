@@ -8,7 +8,7 @@ case $INPUT in
 	;;
 
 	"SLEEP")
-	systemctl hibernate
+	systemctl suspend
 	;;
 	
 	"REBOOT")
