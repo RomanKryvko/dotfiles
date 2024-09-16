@@ -46,6 +46,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -73,10 +76,10 @@ bindsym $mod+d exec rofi -i -show drun -modi drun -show-icons -terminal $TERMINA
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -85,10 +88,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+ctrl+Left move left
@@ -97,7 +100,8 @@ bindsym $mod+ctrl+Up move up
 bindsym $mod+ctrl+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -113,6 +117,12 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 # bindsym $mod+Shift+space floating toggle
 bindsym $mod+space floating toggle
+
+# focus next window
+bindsym $mod+Tab focus next
+
+# focus previous window
+bindsym $mod+ctrl+Tab focus prev
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
@@ -220,16 +230,9 @@ exec_always --no-startup-id xrandr --output eDP1 --mode 1920x1080
 # Display background
 exec_always --no-startup-id $HOME/.config/scripts/set-wallpaper.sh $HOME/Pictures/Wallpapers
 
-# Key binding for i3 lock
-# bindsym $mod+b exec --no-startup-id i3lock
-
-# Assign programs to workspaces
-# Automatically assigns firefox on ws 2 when run
-# for_window [class="firefox"] move to workspace $ws2
-
 # Window compositor
 exec_always --no-startup-id picom
-exec --no-startup-id conky -qdc $HOME/.config/conky/clock.conf
+exec --no-startup-id sleep 2 && conky -qdc $HOME/.config/conky/clock.conf
 
 # Gaps
 smart_gaps on
@@ -246,6 +249,8 @@ for_window [class=".*"] border pixel 3
 bindsym $mod+t border normal 0
 # use no window title and border
 bindsym $mod+y border pixel 3
+# use no window title and no border
+bindsym $mod+u border none
 
 for_window [floating] border pixel 0
 

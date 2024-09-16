@@ -74,6 +74,16 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" X clipboard support
+set clipboard=unnamedplus 
+
+" Jump centering
+nnoremap <C-d> <C-d>zz0
+nnoremap <C-u> <C-u>zz0
+
+" Hide search highlight on ESC
+nnoremap <Esc> <cmd>nohlsearch<CR>
+
 " Statusline
 set laststatus=2
 set noshowmode

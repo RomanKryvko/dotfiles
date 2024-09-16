@@ -2,10 +2,11 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.85
+    background_color = "#282828"
+    background_darkness = 0.9
     background_type = transparent
     font = Terminus Bold 18
-    foreground_color = "#ffffff"
+    foreground_color = "#ebdbb2"
     show_titlebar = False
     scrollbar_position = hidden
     palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
