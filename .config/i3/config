@@ -241,14 +241,39 @@ hide_edge_borders smart
 gaps inner 10px
 gaps outer 10px
 
+focus_on_window_activation focus
+
+workspace_auto_back_and_forth yes
+
+# colours
+set $frost3 #81a1c1
+set $frost4 #5e81ac
+set $storm1 #d8dee9
+set $storm2 #e5e9f0
+set $storm3 #eceff4
+set $night1 #2e3440
+set $night2 #3b4252
+set $night3 #434c5e
+set $night4 #4c566a
+set $urgent_red #bf616a
+
+## class                 border  backgr. text    indicator child_border
+client.focused          $frost4 $frost4 #ffffff $storm1  $frost4
+client.focused_inactive $night1 $night3 #ffffff $frost3  $night4
+client.unfocused        $night2 $night3 #888888 $storm1  $night3
+client.urgent           #2f343a $urgent_red #ffffff $urgent_red $urgent_red
+client.placeholder      #000000 #0c0c0c #ffffff #000000  #0c0c0c
+client.background       #ffffff
+
+set $border_width 4
 # Window title settings
 # Default: Hide window title 
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel $border_width
 
 # use window title, but no border
 bindsym $mod+t border normal 0
 # use no window title and border
-bindsym $mod+y border pixel 3
+bindsym $mod+y border pixel $border_width
 # use no window title and no border
 bindsym $mod+u border none
 
