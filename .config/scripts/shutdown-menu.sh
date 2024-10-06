@@ -1,21 +1,43 @@
 #!/bin/bash
 
-INPUT=$(echo -e 'CANCEL\nSHUTDOWN\nREBOOT\nSLEEP\nEXIT I3' | rofi -dmenu -config $HOME/.config/rofi/rofi.rasi)
+# CMDs
+uptime="`uptime -p | sed -e 's/up //g'`"
+host=`hostnamectl hostname`
+
+# Options
+shutdown=" Shutdown"
+reboot=" Reboot"
+lock=" Lock"
+suspend=" Suspend"
+exit_i3="󰍃 Exit i3"
+
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$host" \
+		-mesg "Uptime: $uptime" \
+		-config ~/.config/rofi/powermenu.rasi
+}
+
+INPUT=$(echo -e "$lock\n$suspend\n$reboot\n$shutdown\n$exit_i3" | rofi_cmd)
 
 case $INPUT in
-	"SHUTDOWN")
+	$shutdown)
 	shutdown -P now
 	;;
 
-	"SLEEP")
+	$suspend)
 	systemctl suspend
 	;;
 	
-	"REBOOT")
+	$reboot)
 	reboot
 	;;
 
-	"EXIT I3")
+	$exit_i3)
 	i3-msg exit
+	;;
+
+	$lock)
+	loginctl lock-session
 	;;
 esac
