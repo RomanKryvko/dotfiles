@@ -29,7 +29,7 @@ timer_stop() {
     if ($1 >= 1000000)
         {
             printf("%.2fs", $1/1000000);
-        } 
+        }
     else
         {
             printf("%.2fms", $1/1000);
@@ -38,7 +38,7 @@ timer_stop() {
     unset timer
 }
 
-truncate_pwd () {
+truncate_pwd() {
     local NAME=$PWD LENGTH=$(($COLUMNS-55))
     if [ ${#NAME} -gt $LENGTH ]; then
         local PARENT=$(dirname $NAME)
@@ -50,5 +50,22 @@ truncate_pwd () {
 }
 
 trap 'timer_start' DEBUG
-PROMPT_COMMAND=timer_stop
-export PS1=$'┌─[\[\e[32m\]\u\[\e[0m\]@\[\e[32m\]\h:\[\e[94m\]$(truncate_pwd)\[\e[0m\]]─[\[\e[0m\]\[\e[32m\]$?\[\e[0m\]]─[\[\e[33m\]${timer_show}\[\e[0m\]]\[\e[93m\]$(parse_git_branch)\n\[\e[0m\]└─\$ '
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+    local EXIT="$?"
+    timer_stop
+    local CLEAR_COL="\[\e[0m\]"
+    local GREEN="\[\e[32m\]"
+    local BLUE="\[\e[94m\]"
+    local YELLOW="\[\e[93m\]"
+    local RED="\[\e[31m\]"
+
+    if [ $EXIT -eq 0 ]; then
+        EXIT=""
+    else
+        EXIT="─[$RED$EXIT$CLEAR_COL]"
+    fi
+
+    PS1="┌─[$GREEN\u$CLEAR_COL@$GREEN\h:$BLUE$(truncate_pwd)$CLEAR_COL]$EXIT─[$YELLOW${timer_show}$CLEAR_COL]$YELLOW$(parse_git_branch)\n$CLEAR_COL└─\$ "
+}
