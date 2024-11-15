@@ -12,25 +12,25 @@ offset.y = 3
 [colors]
 draw_bold_text_with_bright_colors = true
 [colors.primary]
-foreground = "#ebdbb2"
-background = "#282828"
+foreground = "#f9f5d7"
+background = "#212121"
 
 [colors.bright]
-black = "#555555"
+black = "#666666"
 white = "#ffffff"
-red = "#ff5555"
-green = "#55ff55"
-yellow = "#ffff55"
-blue = "#5555ff"
-magenta = "#ff55ff"
-cyan = "#55ffff"
+red = "#f14c4c"
+green = "#23da8b"
+yellow = "#f5f543"
+blue = "#3b8eea"
+magenta = "#d670d6"
+cyan = "#29b8db"
 
 [colors.normal]
-black = "#1d2021"
-white = "#aaaaaa"
-red = "#aa0000"
-green = "#00aa00"
-yellow = "#aa5500"
-blue = "#0000aa"
-magenta = "#aa00aa"
-cyan = "#00aaaa"
+black = "#000000"
+white = "#e5e5e5"
+red = "#cd3131"
+green = "#05b572"
+yellow = "#e5e510"
+blue = "#2472c8"
+magenta = "#bc3fbc"
+cyan = "#11a8cd"
