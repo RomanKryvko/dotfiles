@@ -5,14 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias la='ls -lah'
-alias grep='grep --color=auto'
-alias nightmode='redshift -P -O 5000'
-alias daymode='redshift -x'
-alias pacupd='echo -e "\n" >> update-log.txt && date >> update-log.txt && checkupdates --nocolor >> update-log.txt && sudo pacman -Syu'
-alias ccopy='xsel -ib'
-alias cpaste='xsel -ob'
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
 
 parse_git_branch() {
     if [ "$PWD" != "$HOME" ]; then
