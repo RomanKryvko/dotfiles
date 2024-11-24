@@ -1,24 +1,8 @@
-" An example for a vimrc file.
-"
-" Maintainer:	The Vim Project <https://github.com/vim/vim>
-" Last Change:	2023 Aug 10
-" Former Maintainer:	Bram Moolenaar <Bram@vim.org>
-"
-" To use it, copy it to
-"	       for Unix:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"	 for MS-Windows:  $VIM\_vimrc
-"	      for Haiku:  ~/config/settings/vim/vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings, bail
-" out.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Get the defaults that most users want.
+" Get the defaults
 source $VIMRUNTIME/defaults.vim
+
+" map <Leader>
+let g:mapleader = " "
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -42,6 +26,20 @@ augroup vimrcEx
   autocmd FileType text setlocal textwidth=78
 augroup END
 
+" Text wrapping
+set wrap
+set linebreak
+
+" Plugins
+call plug#begin()
+
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/vim-gitbranch'
+
+call plug#end()
+
 " Add optional packages.
 "
 " The matchit plugin makes the % command work better, but it is not backwards
@@ -62,9 +60,6 @@ colorscheme gruvbox
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
 
-" Toggle nerd tree
-nmap <F6> :NERDTreeToggle<CR>
-
 " Tabs and indents
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -83,6 +78,17 @@ nnoremap <C-u> <C-u>zz0
 
 " Hide search highlight on ESC
 nnoremap <Esc> <cmd>nohlsearch<CR>
+
+" Insert newline without leaving normal mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+
+set splitright
+set splitbelow
+
+set cursorline
+
+set list listchars=tab:>-,trail:·,extends:>,precedes:<,nbsp:␣
 
 " Statusline
 set laststatus=2
