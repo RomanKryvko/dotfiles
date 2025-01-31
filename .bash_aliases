@@ -8,12 +8,30 @@ alias daymode='redshift -x'
 alias pacupd='echo -e "\n$(date)\n$(checkupdates --nocolor)" >> $HOME/update-log.txt && sudo pacman -Syu'
 
 if [ $WAYLAND_DISPLAY ]; then
-    alias ccopy='xsel -ib'
-    alias cpaste='xsel -ob'
-else
     alias ccopy='wl-copy'
     alias cpaste='wl-paste'
+else
+    alias ccopy='xsel -ib'
+    alias cpaste='xsel -ob'
 fi
+
+# stands for "Change (directory) Back"
+# name conflicts with cb clipboard managment utility
+function cb() {
+    if [ ! $1 ]; then
+        cd ..
+    fi
+
+    cd $(pwd | awk -v search_str=$1 '
+    {
+        if (match($0, ".*"search_str, a)) {
+            print(a[0]);
+        }
+        else {
+            print($0);
+        }
+    }')
+}
 
 function config() {
     if [ -d "$HOME/.config/$1" ]; then
