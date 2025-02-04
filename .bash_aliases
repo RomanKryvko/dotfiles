@@ -20,17 +20,17 @@ fi
 function cb() {
     if [ ! $1 ]; then
         cd ..
+    else
+        cd $(pwd | awk -v search_str=$1 '
+        {
+            if (match($0, ".*"search_str, a)) {
+                print(a[0]);
+            }
+            else {
+                print(search_str);
+            }
+        }')
     fi
-
-    cd $(pwd | awk -v search_str=$1 '
-    {
-        if (match($0, ".*"search_str, a)) {
-            print(a[0]);
-        }
-        else {
-            print($0);
-        }
-    }')
 }
 
 function config() {
@@ -44,5 +44,6 @@ function config() {
         $EDITOR "$HOME/.config/$1"
     else
         echo "$1 does not exist in the .config directory."
+        return 1
     fi
 }
