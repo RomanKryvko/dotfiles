@@ -21,7 +21,12 @@ timer_start() {
 
 timer_stop() {
     timer_show=$(echo $((${EPOCHREALTIME/[^0-9]/} - $timer)) | awk '{
-    if ($1 >= 1000000)
+    if ($1 >= 60000000)
+        {
+            seconds = $1/1000000
+            printf("%dm%ds", seconds/60, seconds%60)
+        }
+    else if ($1 >= 1000000)
         {
             printf("%.2fs", $1/1000000);
         }
@@ -34,8 +39,8 @@ timer_stop() {
 }
 
 truncate_pwd() {
-    local NAME=$PWD LENGTH=$(($COLUMNS-55))
-    if [ ${#NAME} -gt $LENGTH ]; then
+    local NAME=$PWD LENGTH=$(($COLUMNS - 35))
+    if [ ${#NAME} -gt $LENGTH ] && [ $NAME != $HOME ]; then
         local PARENT=$(dirname $NAME)
         NAME="/.../$(basename $PARENT)/$(basename $NAME)"
     else
