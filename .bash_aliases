@@ -21,15 +21,8 @@ function cb() {
     if [ ! $1 ]; then
         cd ..
     else
-        cd $(pwd | awk -v search_str=$1 '
-        {
-            if (match($0, ".*"search_str, a)) {
-                print(a[0]);
-            }
-            else {
-                print(search_str);
-            }
-        }')
+        dir=$(pwd | grep -oe ".*$1")
+        cd ${dir:-$1}
     fi
 }
 
