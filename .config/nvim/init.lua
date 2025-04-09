@@ -1,3 +1,11 @@
+-- Cyrillic langmap
+vim.opt.langmap = "йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,фa,ыs,іs,вd,аf,пg,рh,оj,лk,дl,яz,чx,сc,мv,иb,тn,ьm," ..
+    "ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,ФA,ЫS,ІS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,ЯZ,ЧX,СC,МV,ИB,ТN,ЬM," ..
+    "ё`,Ё~,ʼ~,э',є',х[,ъ],ї],Х{,Ъ},Ї},Б<,Ю>,Ж:,Ґ|,Э\",Є\",ю."
+
+vim.api.nvim_set_keymap('n', 'б', ',', { noremap = true })
+vim.api.nvim_set_keymap('n', 'ж', ';', { noremap = true })
+
 -- Set <space> as the leader key
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "

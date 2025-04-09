@@ -6,7 +6,7 @@ normal = { family = "Terminus", style = "Bold" }
 bold = { family = "Terminus", style = "Bold" }
 italic = { family = "Ubuntu Mono", style = "Italic" }
 bold_italic = { family = "Ubuntu Mono", style = "Bold Italic" }
-size = 14
+size = 16
 offset.y = 3
 
 [colors]

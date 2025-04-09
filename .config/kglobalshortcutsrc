@@ -17,7 +17,7 @@ _k_friendly_name=Accessibility
 [kcm_touchpad]
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
-Toggle Touchpad=Touchpad Toggle,Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Toggle Touchpad
+Toggle Touchpad=Touchpad Toggle,Touchpad Toggle\tTouchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Toggle Touchpad
 _k_friendly_name=Touchpad
 
 [kmix]
@@ -30,6 +30,10 @@ increase_volume=Volume Up,Volume Up,Increase Volume
 increase_volume_small=Shift+Volume Up,Shift+Volume Up,Increase Volume by 1%
 mic_mute=Microphone Mute\tMeta+Volume Mute,Microphone Mute\tMeta+Volume Mute,Mute Microphone
 mute=Volume Mute,Volume Mute,Mute
+
+[krusader]
+_k_friendly_name=Krusader
+bring_main_window_to_top=Meta+K,Meta+K,Bring Main Window to Top
 
 [ksmserver]
 Halt Without Confirmation=none,,Shut Down Without Confirmation
@@ -55,6 +59,9 @@ ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
 ExposeClassCurrentDesktop=none,none,Toggle Present Windows (Window class on current desktop)
 Grid View=Meta+G,Meta+G,Toggle Grid View
 Increase Opacity=none,,Increase Opacity of Active Window by 5%
+Invert=Meta+Ctrl+I,Meta+Ctrl+I,Toggle Invert Effect
+Invert Screen Colors=none,none,Invert Screen Colors
+InvertWindow=Meta+Ctrl+U,Meta+Ctrl+U,Toggle Invert Effect on Window
 Kill Window=Meta+Ctrl+Esc,Meta+Ctrl+Esc,Kill Window
 KrohnkiteBTreeLayout=none,none,Krohnkite: BTree Layout
 KrohnkiteColumnsLayout=none,none,Krohnkite: Columns Layout
@@ -147,6 +154,7 @@ Switch to Screen to the Left=none,,Switch to Screen to the Left
 Switch to Screen to the Right=none,,Switch to Screen to the Right
 Toggle Night Color=none,none,Suspend/Resume Night Light
 Toggle Window Raise/Lower=none,,Toggle Window Raise/Lower
+ToggleCurrentThumbnail=Meta+Ctrl+T,Meta+Ctrl+T,Toggle Thumbnail for Current Window
 Walk Through Windows=Alt+Tab,Alt+Tab,Walk Through Windows
 Walk Through Windows (Reverse)=Alt+Shift+Tab,Alt+Shift+Tab,Walk Through Windows (Reverse)
 Walk Through Windows Alternative=none,,Walk Through Windows Alternative
@@ -158,6 +166,10 @@ Walk Through Windows of Current Application Alternative (Reverse)=none,,Walk Thr
 Window Above Other Windows=none,,Keep Window Above Others
 Window Below Other Windows=none,,Keep Window Below Others
 Window Close=Alt+F4,Alt+F4,Close Window
+Window Custom Quick Tile Bottom=none,,Custom Quick Tile Window to the Bottom
+Window Custom Quick Tile Left=none,,Custom Quick Tile Window to the Left
+Window Custom Quick Tile Right=none,,Custom Quick Tile Window to the Right
+Window Custom Quick Tile Top=none,,Custom Quick Tile Window to the Top
 Window Fullscreen=Alt+F,,Make Window Fullscreen
 Window Grow Horizontal=none,,Expand Window Horizontally
 Window Grow Vertical=none,,Expand Window Vertically
@@ -229,6 +241,7 @@ Window to Screen 5=none,,Move Window to Screen 5
 Window to Screen 6=none,,Move Window to Screen 6
 Window to Screen 7=none,,Move Window to Screen 7
 _k_friendly_name=KWin
+disableInputCapture=Meta+Shift+Esc,Meta+Shift+Esc,Disable Active Input Capture
 view_actual_size=none,Meta+0,Zoom to Actual Size
 view_zoom_in=Meta++\tMeta+=,Meta++\tMeta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
@@ -264,7 +277,7 @@ powerProfile=Battery\tMeta+B,Battery\tMeta+B,Switch Power Profile
 _k_friendly_name=plasmashell
 activate application launcher=Alt+F1,Meta\tAlt+F1,Activate Application Launcher
 activate task manager entry 1=Meta+1,Meta+1,Activate Task Manager Entry 1
-activate task manager entry 10=Meta+0,Meta+0,Activate Task Manager Entry 10
+activate task manager entry 10=Meta+0,,Activate Task Manager Entry 10
 activate task manager entry 2=Meta+2,Meta+2,Activate Task Manager Entry 2
 activate task manager entry 3=Meta+3,Meta+3,Activate Task Manager Entry 3
 activate task manager entry 4=Meta+4,Meta+4,Activate Task Manager Entry 4
@@ -283,7 +296,7 @@ cyclePrevAction=none,,Previous History Item
 manage activities=Meta+Q,Meta+Q,Show Activity Switcher
 next activity=Meta+A,none,Walk through activities
 previous activity=Meta+Shift+A,none,Walk through activities (Reverse)
-repeat_action=Meta+Ctrl+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
+repeat_action=Meta+Ctrl+R,,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=none,,Show Barcode…
 show-on-mouse-pos=Meta+V,Meta+V,Show Clipboard Items at Mouse Position
@@ -294,6 +307,12 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][Alacritty.desktop]
 _launch=Alt+Return
+
+[services][net.local.rofi.desktop]
+_launch=Alt+D
+
+[services][org.kde.krunner.desktop]
+_launch=Alt+F2\tSearch
 
 [services][org.kde.spectacle.desktop]
 FullScreenScreenShot=none
