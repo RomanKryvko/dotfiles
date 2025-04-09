@@ -77,13 +77,17 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+vim.diagnostic.config({ virtual_text = true })
+
 -- Jump centering
 vim.keymap.set("n", "<C-d>", "<C-d>zz0")
 vim.keymap.set("n", "<C-u>", "<C-u>zz0")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "[d", function() return vim.diagnostic.jump({ count = 1, float = true }) end,
+    { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", function() return vim.diagnostic.jump({ count = -1, float = true }) end,
+    { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -342,7 +346,15 @@ require("lazy").setup({
                             },
                         },
                     },
+                    cmd = { "lua-language-server" },
+                    filetypes = { "lua" },
+                    --HACK: I didn't find a less dirty way to prevent lsp from indexing the entire home directory
+                    root_dir = function(fname)
+                        return vim.fs.abspath(fname .. "/..")
+                    end,
+                    single_file_support = true,
                 },
+                ts_ls = {},
             }
             require("mason").setup()
 
@@ -362,7 +374,6 @@ require("lazy").setup({
             })
         end,
     },
-
     -- Autoformat
     {
         "stevearc/conform.nvim",

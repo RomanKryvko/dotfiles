@@ -150,12 +150,12 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][30][General]
-positions={"1920x1080":["1","17","desktop:/pz2-test2.png","0","1","desktop:/pz2-test1.png","0","0"]}
+positions={"1920x1080":["1","17"]}
 sortMode=-1
 
 [Containments][30][Wallpaper][org.kde.image][General]
-FillMode=2
-Image=file:///home/roman/Pictures/Wallpapers/minimal/Q099.jpg
+FillMode=1
+Image=file:///home/roman/Pictures/Wallpapers/minimal/great-wave.jpg
 PreviewImage=/home/roman/Pictures/Wallpapers/dev/Tohru_Reading_C_Programming_Language.png
 SlidePaths=/usr/share/wallpapers/
 
@@ -172,8 +172,8 @@ wallpaperplugin=org.kde.image
 positions={"1920x1080":[]}
 
 [Containments][37][Wallpaper][org.kde.image][General]
-FillMode=2
-Image=file:///home/roman/Pictures/Wallpapers/minimal/Q099.jpg
+FillMode=1
+Image=file:///home/roman/Pictures/Wallpapers/minimal/great-wave.jpg
 
 [Containments][8]
 activityId=
@@ -245,7 +245,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][21][Configuration]
-PreloadWeight=80
+PreloadWeight=85
 
 [Containments][8][Applets][22]
 immutability=1
@@ -266,7 +266,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 
 [Containments][8][Applets][31]
 immutability=1
@@ -294,4 +294,4 @@ shownItems=org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.plasma.keyboar
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/pz2-test1.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:/pz2-test2.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:/azure-pz1-test-1.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f
+screenMapping=desktop:/azure-pz1-test-1.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f
