@@ -15,6 +15,14 @@ else
     alias cpaste='xsel -ob'
 fi
 
+
+function _cb() {
+    local cur
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $(compgen -W "${PWD//\// }" -- ${cur}) )
+    true
+}
+
 # stands for "Change (directory) Back"
 # name conflicts with cb clipboard managment utility
 function cb() {
@@ -24,6 +32,17 @@ function cb() {
         dir=$(pwd | grep -oe ".*$1")
         cd ${dir:-$1}
     fi
+}
+
+complete -o nosort -F _cb cb
+
+function _config() {
+    if [ -d "$HOME/.config/" ]; then
+        local cur
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        COMPREPLY=( $(compgen -W "$(ls "$HOME/.config")" -- ${cur}) )
+    fi
+    true
 }
 
 function config() {
@@ -40,3 +59,5 @@ function config() {
         return 1
     fi
 }
+
+complete -F _config config
