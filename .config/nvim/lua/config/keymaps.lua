@@ -27,4 +27,8 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 vim.cmd.cnoreabbrev("vterm", "vs|term")
 vim.cmd.cnoreabbrev("sterm", "sp|term")
 
+-- Insert newline without leaving normal mode
+vim.keymap.set("n", "<Leader>o", "o<Esc>", { desc = "Insert line below" })
+vim.keymap.set("n", "<Leader>O", "O<Esc>", { desc = "Insert line above" })
+
 vim.cmd.cnoreabbrev("cfg", "e " .. vim.fn.stdpath("config"))
