@@ -191,7 +191,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Display background
-exec_always --no-startup-id $HOME/.config/scripts/set-wallpaper.sh $HOME/Pictures/Wallpapers "swaybg -m center -i "
+output * background $($HOME/.config/scripts/pick-wallpaper.sh) fill
 
 exec --no-startup-id conky -qdc $HOME/.config/conky/way-clock.conf
 
