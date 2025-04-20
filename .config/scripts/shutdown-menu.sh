@@ -5,11 +5,11 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostnamectl hostname`
 
 # Options
-shutdown=" Shutdown"
-reboot=" Reboot"
-lock=" Lock"
-suspend=" Suspend"
-exit_i3="󰍃 Exit i3"
+shutdown="  Shutdown"
+reboot="  Reboot"
+lock="  Lock"
+suspend="  Suspend"
+exit_i3="󰍃  Exit i3"
 
 rofi_cmd() {
 	rofi -dmenu \
