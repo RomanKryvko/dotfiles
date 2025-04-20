@@ -1,0 +1,87 @@
+{
+    "reload_style_on_change": true,
+    "position": "bottom",
+    "height": 30,
+    "spacing": 5,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "backlight",
+        "battery",
+        "cpu",
+        "memory",
+        "clock",
+        "tray"
+    ],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%d %b %Y | %H:%M}",
+        "tooltip": true,
+        "tooltip-format": "{:%Z: %d/%m/%Y | %H:%M:%S}",
+        "interval": 1
+    },
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false,
+        "interval": 2
+    },
+    "memory": {
+        "format": "{}%  "
+    },
+    "backlight": {
+        "format": "{percent}%  ",
+    },
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}%  ",
+    },
+    "network": {
+        "format-wifi": "󰖩 ",
+        "format-ethernet": "󰛳 ",
+        "format-disconnected": "NET: DISC",
+        "tooltip-format": "{essid} | {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "󰕾  : OUT {volume}% | IN {format_source}",
+        "format-muted": "OUT 󰝟  | IN {format_source}",
+        "format-bluetooth": " : OUT {volume}% |  IN {format_source}",
+        "format-bluetooth-muted": " 󰝟  |  IN {format_source_muted}",
+        "format-source": "{volume}%",
+        "format-source-muted": " ",
+        "on-click": "pavucontrol"
+    },
+    "user": {
+        "format": "  {user} | up {work_H}:{work_M}",
+    }
+}

@@ -1,5 +1,9 @@
 #!/bin/bash
+if [ ! $1 ]; then
+    exit 1
+fi
 work_path="$1"
+
 if [ $2 ]; then
     wp_command="$2"
 else
