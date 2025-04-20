@@ -18,8 +18,10 @@ exec --no-startup-id dex --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always nm-applet
 
-# Run swaybar
-exec_always swaybar
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -239,3 +241,7 @@ bindsym $mod+t border normal 0
 bindsym $mod+y border pixel $border_width
 # use no window title and no border
 bindsym $mod+u border none
+
+bar {
+    swaybar_command waybar
+}
