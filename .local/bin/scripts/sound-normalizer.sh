@@ -15,25 +15,16 @@ CUR_VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oE [0-9]+% | head -1)
 CUR_VOL=${CUR_VOL::-1}
 
 function get_nearest_divisible() {
-    local i=$CUR_VOL
-    local j=$CUR_VOL
-    while true; do
-        if [ $(($i % $STEP)) == 0 ]; then
-            echo $i
-            return
-        fi
-
-        if [ $(($j % $STEP)) == 0 ]; then
-            echo $j
-            return
-        fi
-
-        i=$(($i+1))
-        j=$(($j-1))
-    done
+    if [ $1 -le $(($STEP / 2)) ]; then
+        echo $(($CUR_VOL - $1))
+    else
+        echo $(($CUR_VOL - $1 + $STEP))
+    fi
 }
 
-if [ $(($CUR_VOL % $STEP)) != 0 ]; then
-    pactl set-sink-volume @DEFAULT_SINK@ $(get_nearest_divisible)%
+REM=$(($CUR_VOL % $STEP))
+
+if [ $REM != 0 ]; then
+    pactl set-sink-volume @DEFAULT_SINK@ $(get_nearest_divisible $REM)%
 fi
 
