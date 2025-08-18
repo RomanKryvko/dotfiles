@@ -70,10 +70,3 @@ __prompt_command() {
     PS1="┌─[$GREEN\u$CLEAR_COL@$GREEN\h:$BLUE$(truncate_pwd)$CLEAR_COL]$EXIT─[$YELLOW${timer_show}$CLEAR_COL]$YELLOW$(parse_git_branch)\n$CLEAR_COL└─\$ "
 }
 
-# Automatically added by the Guix install script.
-if [ -n "$GUIX_ENVIRONMENT" ]; then
-    if [[ $PS1 =~ (.*)"\\$" ]]; then
-        PS1="${BASH_REMATCH[1]} [env]\\\$ "
-    fi
-fi
-
