@@ -10,9 +10,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 parse_git_branch() {
-    if [ "$PWD" != "$HOME" ]; then
-        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-    fi
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 timer_start() {
