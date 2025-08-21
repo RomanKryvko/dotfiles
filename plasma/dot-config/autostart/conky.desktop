@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=conky -qdc .config/conky/way-clock.conf
+Icon=conky-logomark-violet
+Name=conky
+Path=
+Terminal=false
+Type=Application

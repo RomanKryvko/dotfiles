@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/roman/.config/scripts/set-wallpaper.sh /home/roman/Pictures/Wallpapers plasma-apply-wallpaperimage
+Icon=application-x-shellscript
+Name=set-wallpaper-plasma
+Type=Application
+X-KDE-AutostartScript=true
