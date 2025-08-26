@@ -37,6 +37,17 @@ return {
                 map("K", vim.lsp.buf.hover, "Hover Documentation")
                 map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
+                -- Sets border style for windows like hover docs or diagnostics
+                local border_style = "single"
+                local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+                function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                    opts = opts or {}
+                    opts.border = opts.border or border_style
+
+                    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+                end
+
                 -- Highlight references of the word under cursor
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.server_capabilities.documentHighlightProvider then
