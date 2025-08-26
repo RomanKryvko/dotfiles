@@ -169,6 +169,7 @@ return {
                 },
                 "hrsh7th/cmp-nvim-lsp",
                 "hrsh7th/cmp-path",
+                "hrsh7th/cmp-buffer",
             },
             config = function()
                 -- See `:help cmp`
@@ -213,6 +214,14 @@ return {
                         { name = "nvim_lsp" },
                         { name = "luasnip" },
                         { name = "path" },
+                    },
+                })
+                -- Complete from buffer for filetypes without LSP
+                cmp.setup.filetype({ "", "text", "markdown", "conf", "json", "jsonc", "sh", "cmake" }, {
+                    completion = { autocomplete = false },
+                    sources = {
+                        { name = "path" },
+                        { name = "buffer" },
                     },
                 })
             end,
