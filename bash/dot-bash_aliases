@@ -29,7 +29,7 @@ function cb() {
     if [ ! $1 ]; then
         cd ..
     else
-        dir=$(pwd | grep -oe ".*$1")
+        dir=$(dirname $PWD | grep -oe ".*$1")
         cd ${dir:-$1}
     fi
 }
