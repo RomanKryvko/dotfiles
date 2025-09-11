@@ -7,7 +7,9 @@
 export TERMINAL=alacritty
 export GTEST_COLOR=1
 export EDITOR=vim
-export PATH="$PATH:$HOME/.local/bin/:$HOME/.local/bin/scripts"
+if [[ $PATH != *"$HOME/.local/bin/:$HOME/.local/bin/scripts" ]]; then
+    export PATH="$PATH:$HOME/.local/bin/:$HOME/.local/bin/scripts"
+fi
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export ANDROID_AVD_HOME=$HOME/.android/avd
