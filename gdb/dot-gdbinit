@@ -1,0 +1,3 @@
+set pagination off
+set debuginfod enabled on
+set extended-prompt \[\e[0;33m\](gdb) \[\e[0m\]
