@@ -1,3 +1,5 @@
 $include /etc/inputrc
 
 set colored-stats on
+"\C-p": menu-complete
+"\C-n": menu-complete-backward
