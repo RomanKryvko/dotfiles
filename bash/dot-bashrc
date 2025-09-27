@@ -9,6 +9,8 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+shopt -s autocd
+
 export HISTCONTROL=ignoreboth
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
 export MANROFFOPT="-P -c"
