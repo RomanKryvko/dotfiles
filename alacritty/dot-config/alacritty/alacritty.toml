@@ -1,6 +1,15 @@
 [window]
 opacity = 0.90
 
+[[keyboard.bindings]]
+key = "м"
+mods = "Control|Shift"
+action = "Paste"
+[[keyboard.bindings]]
+key = "с"
+mods = "Control|Shift"
+action = "Copy"
+
 [font]
 normal = { family = "Terminus", style = "Bold" }
 bold = { family = "Terminus", style = "Bold" }
