@@ -25,6 +25,10 @@ popupWidth=560
 [Containments][2][Applets][19][Configuration][Appearance]
 fontWeight=400
 
+[Containments][2][Applets][19][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][2][Applets][20]
 immutability=1
 plugin=org.kde.plasma.showdesktop
@@ -152,6 +156,9 @@ plugin=org.kde.plasma.notifications
 [Containments][2][Applets][7][Applets][12][Configuration]
 PreloadWeight=100
 
+[Containments][2][Applets][7][Applets][12][Shortcuts]
+global=Meta+H
+
 [Containments][2][Applets][7][Applets][13]
 immutability=1
 plugin=org.kde.plasma.clipboard
@@ -173,6 +180,9 @@ PreloadWeight=100
 [Containments][2][Applets][7][Applets][15][Configuration][General]
 migrated=true
 
+[Containments][2][Applets][7][Applets][15][Shortcuts]
+global=Meta+L
+
 [Containments][2][Applets][7][Applets][16]
 immutability=1
 plugin=org.kde.plasma.keyboardlayout
@@ -193,7 +203,10 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2][Applets][7][Applets][21][Configuration]
-PreloadWeight=95
+PreloadWeight=0
+
+[Containments][2][Applets][7][Applets][21][Shortcuts]
+global=Meta+;
 
 [Containments][2][Applets][7][Applets][22]
 immutability=1
@@ -209,12 +222,18 @@ plugin=org.kde.plasma.networkmanagement
 [Containments][2][Applets][7][Applets][23][Configuration]
 PreloadWeight=100
 
+[Containments][2][Applets][7][Applets][23][Shortcuts]
+global=Meta+J
+
 [Containments][2][Applets][7][Applets][25]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2][Applets][7][Applets][25][Configuration]
-PreloadWeight=100
+PreloadWeight=85
+
+[Containments][2][Applets][7][Applets][25][Shortcuts]
+global=Meta+K
 
 [Containments][2][Applets][7][Applets][31]
 immutability=1
@@ -226,9 +245,8 @@ PreloadWeight=0
 [Containments][2][Applets][7][Applets][31][Shortcuts]
 global=Meta+M
 
-[Containments][2][Applets][7][Applets][39]
-immutability=1
-plugin=org.kde.plasma.weather
+[Containments][2][Applets][7][Applets][39][Configuration]
+PreloadWeight=42
 
 [Containments][2][Applets][7][Applets][9]
 immutability=1
@@ -242,10 +260,10 @@ DialogWidth=720
 PreloadWeight=100
 
 [Containments][2][Applets][7][General]
-extraItems=org.kde.plasma.mediacontroller,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.notifications,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.weather
+extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.notifications,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.mediacontroller
 hiddenItems=org.kde.plasma.brightness,org.kde.plasma.clipboard,mcontrolcenter
 knownItems=org.kde.plasma.mediacontroller,org.kde.plasma.cameraindicator,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod,org.kde.plasma.notifications,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.keyboardlayout,org.kde.plasma.brightness,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.weather
-shownItems=org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.mediacontroller
+shownItems=org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
 [Containments][2][General]
 AppletOrder=36;38;28;19;29;27;26;6;7;20
@@ -266,7 +284,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][30][General]
-positions={"1920x1080":["1","17","desktop:/rozklad.png","0","1","desktop:/foto.png","0","0"]}
+positions={"1920x1080":["1","17"]}
 sortMode=-1
 
 [Containments][30][Wallpaper][org.kde.image][General]
@@ -293,4 +311,3 @@ Image=file:///home/roman/Pictures/Wallpapers/anime/corsair.jpg
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:2025-07-06_00.59.44.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:map-new.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:frontend-build.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:static-app-create.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:mc,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:/rozklad.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:after.jpg,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:LB3,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:before.jpg,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:map-big.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:xiaomi.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:map.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:foto.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:plan2.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:/foto.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:/azure-pz1-test-1.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:frontend-deploy-swa.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:wolrd map.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:backend-deploy.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:sucess-login-frontend-2.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:sucess-login-frontend.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:plan.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:frontend-deploy-success.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f,desktop:static-app-url.png,0,6ff2b49e-529e-4f9f-b54d-c12e47a46d2f

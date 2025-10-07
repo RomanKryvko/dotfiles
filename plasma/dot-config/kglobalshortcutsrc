@@ -25,10 +25,6 @@ increase_volume_small=Shift+Volume Up,Shift+Volume Up,Increase Volume by 1%
 mic_mute=Microphone Mute\tMeta+Volume Mute,Microphone Mute\tMeta+Volume Mute,Mute Microphone
 mute=Volume Mute,Volume Mute,Mute
 
-[krusader]
-_k_friendly_name=Krusader
-bring_main_window_to_top=Meta+K,Meta+K,Bring Main Window to Top
-
 [ksmserver]
 Halt Without Confirmation=none,,Shut Down Without Confirmation
 Lock Session=Alt+B\tScreensaver,Meta+L\tScreensaver,Lock Session
@@ -89,8 +85,9 @@ KrohnkiteStackedLayout=none,none,Krohnkite: Stacked Layout
 KrohnkiteStairLayout=none,none,Krohnkite: Stair Layout
 KrohnkiteTileLayout=none,none,Krohnkite: Tile Layout
 KrohnkiteToggleFloat=none,none,Krohnkite: Toggle Float
-KrohnkiteTreeColumnLayout=none,none,Krohnkite: Tree Column Layout
+KrohnkiteTreeColumnLayout=none,none,Krohnkite: Three Column Layout
 KrohnkitegrowWidth=Meta+Ctrl+L,none,Krohnkite: Grow Width
+KrohnkitetoggleDock=none,none,Krohnkite: Toggle Dock
 Move Tablet to Next Output=none,none,Move the tablet to the next output
 MoveMouseToCenter=Meta+F6,Meta+F6,Move Mouse to Center
 MoveMouseToFocus=Meta+F5,Meta+F5,Move Mouse to Focus
@@ -280,6 +277,11 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 12=Meta+H,none,Activate Notifications Widget
+activate widget 15=Meta+L,none,Activate Audio Volume Widget
+activate widget 21=Meta+;,none,Activate Power and Battery Widget
+activate widget 23=Meta+J,none,Activate Networks Widget
+activate widget 25=Meta+K,none,Activate Bluetooth Widget
 activate widget 31=Meta+M,none,Activate Media Player Widget
 activate widget 36=none,none,Activate Application Dashboard Widget
 clear-history=none,,Clear Clipboard History
