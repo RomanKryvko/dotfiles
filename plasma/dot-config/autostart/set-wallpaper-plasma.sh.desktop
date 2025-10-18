@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/home/roman/.config/scripts/set-wallpaper.sh /home/roman/Pictures/Wallpapers plasma-apply-wallpaperimage
+Exec=/home/roman/.local/bin/scripts/set-wallpaper-plasma.sh
 Icon=application-x-shellscript
 Name=set-wallpaper-plasma
 Type=Application
