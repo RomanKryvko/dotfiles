@@ -53,6 +53,7 @@ truncate_pwd() {
     echo "$NAME"
 }
 
+#FIXME: tmux triggers DEBUG each time the prompt is printed
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=__prompt_command
 
