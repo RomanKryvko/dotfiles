@@ -15,6 +15,16 @@ else
     alias cpaste='xsel -ob'
 fi
 
+function mkdircd() {
+    for arg in ${@}; do
+        [[ $arg != -* ]] && local dir=$arg && break
+    done
+    if [[ ! $dir ]]; then
+        echo "No directory provided."
+        return 1
+    fi
+    mkdir ${@} && cd $dir
+}
 
 function _cb() {
     local cur
