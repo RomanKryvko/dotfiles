@@ -65,3 +65,23 @@ vim.keymap.set("n", "<Leader>o", "o<Esc>", { desc = "Insert line below" })
 vim.keymap.set("n", "<Leader>O", "O<Esc>", { desc = "Insert line above" })
 
 vim.cmd.cnoreabbrev("cfg", "e " .. vim.fn.stdpath("config"))
+
+vim.api.nvim_create_user_command("Prose", function()
+    vim.keymap.set("n", "h", "gh")
+    vim.keymap.set("n", "j", "gj")
+    vim.keymap.set("n", "k", "gk")
+    vim.keymap.set("n", "l", "gl")
+    vim.keymap.set("n", "0", "g0")
+    vim.keymap.set("n", "$", "g$")
+    vim.opt.spell = true
+end, { desc = "Set keybindings for prose editing." })
+
+vim.api.nvim_create_user_command("Noprose", function()
+    vim.keymap.del("n", "h")
+    vim.keymap.del("n", "j")
+    vim.keymap.del("n", "k")
+    vim.keymap.del("n", "l")
+    vim.keymap.del("n", "0")
+    vim.keymap.del("n", "$")
+    vim.opt.spell = false
+end, { desc = "Set keybindings for code editing." })
