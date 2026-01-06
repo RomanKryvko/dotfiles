@@ -216,14 +216,6 @@ return {
                         { name = "path" },
                     },
                 })
-                -- Complete from buffer for filetypes without LSP
-                cmp.setup.filetype({ "", "text", "markdown", "conf", "json", "jsonc", "sh", "cmake" }, {
-                    completion = { autocomplete = false },
-                    sources = {
-                        { name = "path" },
-                        { name = "buffer" },
-                    },
-                })
             end,
         },
 
