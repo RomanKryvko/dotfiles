@@ -30,16 +30,6 @@ augroup END
 set wrap
 set linebreak
 
-" Plugins
-call plug#begin()
-
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdcommenter'
-Plug 'morhetz/gruvbox'
-Plug 'itchyny/vim-gitbranch'
-
-call plug#end()
-
 " Add optional packages.
 "
 " The matchit plugin makes the % command work better, but it is not backwards
@@ -54,11 +44,6 @@ syntax on
 
 " Line numbers
 set number relativenumber
-
-" Colorscheme settings
-colorscheme gruvbox
-set bg=dark
-hi Normal guibg=NONE ctermbg=NONE
 
 " Tabs and indents
 filetype plugin indent on
@@ -90,22 +75,56 @@ set cursorline
 
 set list listchars=tab:>-,trail:·,extends:>,precedes:<,nbsp:␣
 
-" Statusline
-set laststatus=2
-set noshowmode
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'Gitbranch'
-      \ },
-      \ }
-function Gitbranch()
-  let head = gitbranch#name()
-  if head != ""
-    let head = "\ue0a0 " .. head
-  endif
-  return head
+function InstallPlug()
+    call system('curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
+    if !v:shell_error
+        echo 'Installing Plug: download successful.'
+        return 1
+    elseif v:shell_error == 127
+        echoerr 'Installing Plug: curl not found.'
+    endif
+    echoerr 'Installing Plug: error code ' . v:shell_error
+    return 0
 endfunction
+
+" Plugins
+let g:has_plug = exists('*plug#begin')
+if !g:has_plug
+    let g:has_plug = InstallPlug()
+endif
+
+if g:has_plug
+    call plug#begin()
+
+    Plug 'itchyny/lightline.vim'
+    Plug 'preservim/nerdcommenter'
+    Plug 'morhetz/gruvbox'
+    Plug 'itchyny/vim-gitbranch'
+
+    call plug#end()
+
+    " Colorscheme settings
+    silent! colorscheme gruvbox
+    set bg=dark
+    hi Normal guibg=NONE ctermbg=NONE
+
+    " Statusline
+    set laststatus=2
+    set noshowmode
+    let g:lightline = {
+                \ 'active': {
+                \   'left': [ [ 'mode', 'paste' ],
+                \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+                \ },
+                \ 'component_function': {
+                \   'gitbranch': 'Gitbranch'
+                \ },
+                \ }
+    function Gitbranch()
+        let head = gitbranch#name()
+        if head != ""
+            let head = "\ue0a0 " .. head
+        endif
+        return head
+    endfunction
+endif
