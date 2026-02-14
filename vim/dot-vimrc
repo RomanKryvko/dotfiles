@@ -91,6 +91,7 @@ function InstallPlug()
 endfunction
 
 " Plugins
+runtime autoload/plug.vim
 let g:has_plug = exists('*plug#begin')
 if !g:has_plug
     let g:has_plug = InstallPlug()
