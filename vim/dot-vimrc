@@ -104,6 +104,7 @@ if g:has_plug
     Plug 'preservim/nerdcommenter'
     Plug 'morhetz/gruvbox'
     Plug 'itchyny/vim-gitbranch'
+    Plug 'romankryvko/cyrillic.vim'
 
     call plug#end()
 
