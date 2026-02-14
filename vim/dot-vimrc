@@ -39,6 +39,9 @@ set linebreak
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+if has('timers') && has('#TextYankPost')
+  packadd! hlyank
+endif
 
 syntax on
 
