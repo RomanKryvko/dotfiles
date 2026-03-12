@@ -47,6 +47,7 @@ if has('syntax') && has('eval')
 endif
 if has('timers') && exists('##TextYankPost')
   packadd! hlyank
+  let g:hlyank_duration = 120
 endif
 
 syntax on
