@@ -139,3 +139,7 @@ if g:has_plug
         return head
     endfunction
 endif
+
+" WARNING: SpellBad gets overwritten by the colorscheme, unless called last
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red gui=undercurl guisp=red
