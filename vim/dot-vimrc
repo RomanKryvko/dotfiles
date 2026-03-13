@@ -46,7 +46,7 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 if has('timers') && exists('##TextYankPost')
-  packadd! hlyank
+  silent! packadd! hlyank " hlyank is not available everywhere by default
   let g:hlyank_duration = 120
 endif
 
