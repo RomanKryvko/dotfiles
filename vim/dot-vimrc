@@ -50,6 +50,10 @@ if has('timers') && exists('##TextYankPost')
   let g:hlyank_duration = 120
 endif
 
+" Search for whole selected text, not just the word under cursor
+vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap # y?\V<C-R>=escape(@",'/\')<CR><CR>
+
 syntax on
 
 " Line numbers
