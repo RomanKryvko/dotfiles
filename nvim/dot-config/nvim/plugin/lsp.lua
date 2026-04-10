@@ -4,6 +4,7 @@ vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig',
     "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
     "https://github.com/j-hui/fidget.nvim",
     "https://github.com/folke/neodev.nvim",
+    'https://github.com/nvim-mini/mini.nvim',
 })
 
 require("fidget").setup()
@@ -114,7 +115,8 @@ require("mason").setup()
 require("mason-tool-installer").setup({ ensure_installed = vim.tbl_keys(servers or {}) })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+require("mini.completion").setup()
+capabilities = vim.tbl_deep_extend("force", capabilities, MiniCompletion.get_lsp_capabilities())
 
 require("mason-lspconfig").setup({
     handlers = {
