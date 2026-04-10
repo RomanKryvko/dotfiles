@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ll='ls -lh'
+alias lsf='ls -p | grep -v /' # list files
 alias grep='grep --color=auto'
 
 alias nightmode='redshift -P -O 5000'
