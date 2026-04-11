@@ -68,8 +68,10 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+set path=**
+
 " X clipboard support
-set clipboard=unnamedplus 
+set clipboard=unnamedplus
 
 " Jump centering
 nnoremap <C-d> <C-d>zz0
