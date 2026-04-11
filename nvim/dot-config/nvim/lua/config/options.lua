@@ -30,7 +30,7 @@ vim.opt.signcolumn = "yes"
 -- Swap file writing delay
 vim.opt.updatetime = 250
 
--- Which-key delay
+-- Key suggestion delay
 vim.opt.timeoutlen = 400
 
 -- Configure how new splits should be opened
