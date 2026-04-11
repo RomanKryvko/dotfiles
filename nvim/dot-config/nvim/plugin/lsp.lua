@@ -3,12 +3,12 @@ vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig',
     "https://github.com/williamboman/mason-lspconfig.nvim",
     "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
     "https://github.com/j-hui/fidget.nvim",
-    "https://github.com/folke/neodev.nvim",
+    "https://github.com/folke/lazydev.nvim",
     'https://github.com/nvim-mini/mini.nvim',
 })
 
 require("fidget").setup()
-require("neodev").setup()
+require("lazydev").setup()
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
