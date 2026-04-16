@@ -85,3 +85,27 @@ vim.api.nvim_create_user_command("Noprose", function()
     vim.keymap.del("n", "$")
     vim.opt.spell = false
 end, { desc = "Set keybindings for code editing." })
+
+vim.api.nvim_create_user_command("PackPurge", function()
+    local inactive = vim.iter(vim.pack.get())
+        :filter(function(x) return not x.active end)
+        :map(function(x) return x.spec.name end)
+        :totable()
+
+    if not next(inactive) then
+        print("No inactive packages.")
+        return
+    end
+
+    local inactiveStr = ""
+    for i = 1, #inactive - 1 do
+        inactiveStr = inactiveStr .. inactive[i] .. ', '
+    end
+    inactiveStr = inactiveStr .. inactive[#inactive]
+
+    local prompt = "The following packages will be removed: " .. inactiveStr .. ". Proceed?"
+    local choice = vim.fn.confirm(prompt, "&Yes\n&No", 2)
+    if choice == 1 then
+        vim.pack.del(inactive)
+    end
+end, { desc = "Delete inactive packages." })

@@ -5,6 +5,7 @@ require("mini.ai").setup({ n_lines = 500 })
 require("mini.surround").setup()
 -- Auto brackets / quotes pairs
 require("mini.pairs").setup()
+require("mini.icons").setup()
 require("mini.tabline").setup()
 require("mini.comment").setup()
 
@@ -72,10 +73,31 @@ vim.keymap.set('i', '<CR>', 'v:lua.cr_action()', { expr = true })
 -- Statusline
 local statusline = require("mini.statusline")
 statusline.setup({ use_icons = vim.g.have_nerd_font })
+---@diagnostic disable-next-line: duplicate-set-field
 statusline.section_location = function()
     return "%2l:%-2v|%L"
 end
 -- Disable search count in statusline if already displayed in cmd
 if not string.find(vim.o.shortmess, 'S') then
+    ---@diagnostic disable-next-line: duplicate-set-field
     statusline.section_searchcount = function() end
 end
+
+local extra = require('mini.extra')
+extra.setup()
+local pick = require('mini.pick')
+pick.setup()
+
+local keymap = function(keys, func, desc)
+    vim.keymap.set('n', keys, func, { desc = desc })
+end
+
+keymap("<leader>sh", pick.builtin.help, "[S]earch [H]elp")
+keymap("<leader>sk", extra.pickers.keymaps, "[S]earch [K]eymaps")
+keymap("<leader>sf", pick.builtin.files, "[S]earch [F]iles")
+keymap("<leader>sg", pick.builtin.grep_live, "[S]earch by [G]rep")
+keymap("<leader>sd", extra.pickers.diagnostic, "[S]earch [D]iagnostics")
+keymap("<leader>sr", pick.builtin.resume, "[S]earch [R]esume")
+keymap("<leader>s.", extra.pickers.oldfiles, '[S]earch Recent Files ("." for repeat)')
+keymap("<leader><leader>", pick.builtin.buffers, "[ ] Find existing buffers")
+keymap("<leader>/", extra.pickers.buf_lines, "[/] Fuzzily search in current buffer")
