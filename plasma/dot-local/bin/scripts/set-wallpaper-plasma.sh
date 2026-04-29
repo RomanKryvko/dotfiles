@@ -4,7 +4,7 @@
 DIMENS=($(cat /sys/class/graphics/fb0/virtual_size | awk 'BEGIN {FS=","} {print $1, $2}'))
 
 if [ ! -z $1 ]; then
-    IMG=$1
+    IMG=$(readlink -f $1)
 else
     FILES=($(find $HOME/Pictures/Wallpapers -type f \( -name "*.jp*g" -o -name "*.png" -o -name "*.webp" \)))
     FILE_COUNT=${#FILES[@]}
