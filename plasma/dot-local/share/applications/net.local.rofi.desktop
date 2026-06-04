@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=rofi -icon-theme Papirus-Dark -i -show drun -modi drun -show-icons -terminal $TERMINAL -config $HOME/.config/rofi/rofi.rasi -normal-window
+Name=rofi
+NoDisplay=true
+StartupNotify=false
+Type=Application
+X-KDE-GlobalAccel-CommandShortcut=true
