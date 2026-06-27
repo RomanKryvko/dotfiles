@@ -72,6 +72,13 @@ __prompt_command() {
         EXIT="─[$RED$EXIT$CLEAR_COL]"
     fi
 
-    PS1="┌─[$GREEN\u$CLEAR_COL@$GREEN\h:$BLUE$(truncate_pwd)$CLEAR_COL]$EXIT─[$YELLOW${timer_show}$CLEAR_COL]$YELLOW$(parse_git_branch)\n$CLEAR_COL└─\$ "
+    local JOBS=$(jobs -p | wc -l)
+    if [ $JOBS -eq 0 ]; then
+        JOBS=""
+    else
+        JOBS=" ${JOBS}j"
+    fi
+
+    PS1="┌─[$GREEN\u$CLEAR_COL@$GREEN\h:$BLUE$(truncate_pwd)$CLEAR_COL]$EXIT─[$YELLOW${timer_show}$CLEAR_COL]$YELLOW$(parse_git_branch)$BLUE$JOBS\n$CLEAR_COL└─\$ "
 }
 
