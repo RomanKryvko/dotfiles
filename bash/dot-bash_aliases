@@ -72,3 +72,16 @@ function config() {
 }
 
 complete -F _config config
+
+if [[ $(command -v ranger) ]]; then
+    ranger() {
+        local tempfile=$(mktemp -t ranger.XXXXXXX)
+        command ranger --cmd="map Q chain shell echo %d > $tempfile; quitall" "$@"
+        local choosedir=$(cat -- $tempfile)
+        if [[ -d $choosedir ]] && [[ $choosedir != $PWD ]]; then
+            cd -- $choosedir
+        fi
+        rm -f -- $tempfile
+    }
+fi
+# vim: ft=sh:
