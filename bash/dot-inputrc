@@ -4,3 +4,4 @@ set colored-stats on
 "\C-p": menu-complete
 "\C-n": menu-complete-backward
 "\C-g": end-of-history
+"\C-d": kill-word
