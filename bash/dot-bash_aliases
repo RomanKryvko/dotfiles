@@ -6,7 +6,6 @@ alias grep='grep --color=auto'
 
 alias nightmode='redshift -P -O 5000'
 alias daymode='redshift -x'
-alias pacupd='echo -e "\n$(date)\n$(checkupdates --nocolor)" >> $HOME/update-log.txt && sudo pacman -Syu'
 
 if [ $WAYLAND_DISPLAY ]; then
     alias ccopy='wl-copy'
