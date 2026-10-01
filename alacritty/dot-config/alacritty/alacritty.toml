@@ -8,11 +8,11 @@ bindings = [
 ]
 
 [font]
-normal = { family = "Terminus", style = "Bold" }
-bold = { family = "Terminus", style = "Bold" }
+normal = { family = "Terminus (TTF)", style = "Bold" }
+bold = { family = "Terminus (TTF)", style = "Bold" }
 italic = { family = "Ubuntu Mono", style = "Italic" }
 bold_italic = { family = "Ubuntu Mono", style = "Bold Italic" }
-size = 16
+size = 15
 offset.y = 3
 
 [colors]
