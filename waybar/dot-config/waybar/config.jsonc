@@ -17,17 +17,14 @@
         "battery",
         "cpu",
         "memory",
+        "sway/language",
         "clock",
         "tray"
     ],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    "sway/language": {
+        "hide-single-layout": true,
+        "tooltip": true,
+        "tooltip-format": "{long}"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -57,14 +54,14 @@
         "format": "{}%  "
     },
     "backlight": {
-        "format": "{percent}%  ",
+        "format": "{percent}%  "
     },
     "battery": {
         "states": {
             "warning": 20,
             "critical": 10
         },
-        "format": "{capacity}%  ",
+        "format": "{capacity}%  "
     },
     "network": {
         "format-wifi": "󰖩 ",
@@ -79,9 +76,9 @@
         "format-bluetooth-muted": " 󰝟  |  IN {format_source_muted}",
         "format-source": "{volume}%",
         "format-source-muted": " ",
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol"
     },
     "user": {
-        "format": "  {user} | up {work_H}:{work_M}",
+        "format": "  {user} | up {work_H}:{work_M}"
     }
 }

@@ -4,7 +4,7 @@
 @define-color urgent        #d65d0e;
 
 * {
-    font-family: Iosevka;
+    font-family: 'Ubuntu Mono';
     font-size: 16px;
 }
 
@@ -52,6 +52,7 @@ window#waybar {
 #user,
 #memory,
 #cpu,
+#language,
 #battery {
     margin-top: 5px;
     background-color: @background;
