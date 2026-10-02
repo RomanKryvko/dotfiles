@@ -10,13 +10,13 @@ font pango: Ubuntu regular 14
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always nm-applet
+
+exec wl-gammarelay-rs
+bindsym $mod+XF86MonBrightnessUp exec busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n 200
+bindsym $mod+XF86MonBrightnessDown exec busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -200
 
 input type:touchpad {
     tap enabled

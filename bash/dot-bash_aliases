@@ -4,15 +4,16 @@ alias ll='ls -lh'
 alias lsf='ls -p | grep -v /' # list files
 alias grep='grep --color=auto'
 
-alias nightmode='redshift -P -O 5000'
-alias daymode='redshift -x'
-
 if [ $WAYLAND_DISPLAY ]; then
     alias ccopy='wl-copy'
     alias cpaste='wl-paste'
-else
+    alias nightmode='busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 5000'
+    alias daymode='busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500'
+elif [ $DISPLAY ]; then
     alias ccopy='xsel -ib'
     alias cpaste='xsel -ob'
+    alias nightmode='redshift -P -O 5000'
+    alias daymode='redshift -x'
 fi
 
 function mkdircd() {
