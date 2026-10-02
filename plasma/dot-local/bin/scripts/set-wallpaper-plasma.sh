@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 #X = 0, Y = 1
 DIMENS=($(cat /sys/class/graphics/fb0/virtual_size | awk 'BEGIN {FS=","} {print $1, $2}'))

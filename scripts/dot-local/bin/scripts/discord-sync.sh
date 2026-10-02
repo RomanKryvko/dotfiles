@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 TEMP_DB="/tmp/temp-pacman-db-${UID}/"
 DB_PATH="$(pacman-conf DBPath)"
 

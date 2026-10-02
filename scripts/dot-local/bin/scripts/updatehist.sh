@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 log_path='/var/log/pacman.log'
 
 upgrades_to_read=1

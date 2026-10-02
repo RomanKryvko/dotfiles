@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"

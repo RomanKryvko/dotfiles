@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 # Rounds the default sink volume to be divisible by STEP
 
 if [ ! -z $1 ] ; then
