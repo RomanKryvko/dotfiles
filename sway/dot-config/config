@@ -24,8 +24,8 @@ exec --no-startup-id conky -qdc $HOME/.config/conky/way-clock.conf
 
 exec wl-gammarelay-rs
 
-exec swayidle -w timeout 600 'brightnessctl set 20%' timeout 660 'systemctl suspend' before-sleep hyprlock
-exec sway-audio-idle-inhibit
+exec "swayidle -w timeout 600 'brightnessctl g > /tmp/brightnessctl-sway && brightnessctl s 20%' resume 'brightnessctl s $(cat /tmp/brightnessctl-sway) || brightnessctl s 40%' timeout 630 'hyprlock &' timeout 720 'systemctl suspend' before-sleep hyprlock lock hyprlock"
+exec 'sway-audio-idle-inhibit'
 
 bar swaybar_command waybar
 
