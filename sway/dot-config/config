@@ -22,6 +22,8 @@ font pango: Ubuntu regular 14
 
 exec --no-startup-id conky -qdc $HOME/.config/conky/way-clock.conf
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+
 exec wl-gammarelay-rs
 
 exec "swayidle -w timeout 600 'brightnessctl g > /tmp/brightnessctl-sway && brightnessctl s 20%' resume 'brightnessctl s $(cat /tmp/brightnessctl-sway) || brightnessctl s 40%' timeout 630 'hyprlock &' timeout 720 'systemctl suspend' before-sleep hyprlock lock hyprlock"
