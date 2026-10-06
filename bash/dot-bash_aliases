@@ -1,7 +1,6 @@
 alias ls='ls --color=auto'
 alias la='ls -lah'
 alias ll='ls -lh'
-alias lsf='ls -p | grep -v /' # list files
 alias grep='grep --color=auto'
 
 if [ $WAYLAND_DISPLAY ]; then
@@ -25,6 +24,10 @@ function mkdircd() {
         return 1
     fi
     mkdir ${@} && cd $dir
+}
+
+function lsf {
+    ls -p ${@} | grep -v /
 }
 
 function _cb() {
