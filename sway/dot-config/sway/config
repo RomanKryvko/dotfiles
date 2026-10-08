@@ -184,7 +184,6 @@ $bindCode $mod+r mode "resize"
 
 # Display background
 output * background $($HOME/.config/scripts/pick-rnd-wallpaper.sh) fill
-output * scale 1.1
 
 # Gaps
 smart_gaps on
