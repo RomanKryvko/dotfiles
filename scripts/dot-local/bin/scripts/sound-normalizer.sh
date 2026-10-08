@@ -11,8 +11,7 @@ else
     STEP=5
 fi
 
-CUR_VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oE [0-9]+% | head -1)
-CUR_VOL=${CUR_VOL::-1}
+CUR_VOL=$(wpctl get-volume @DEFAULT_SINK@ | awk '{match($0, /[0-9]+\.?[0-9]+$/, a); print a[0] * 100}')
 
 function get_nearest_divisible() {
     if [ $1 -le $(($STEP / 2)) ]; then
@@ -25,6 +24,6 @@ function get_nearest_divisible() {
 REM=$(($CUR_VOL % $STEP))
 
 if [ $REM != 0 ]; then
-    pactl set-sink-volume @DEFAULT_SINK@ $(get_nearest_divisible $REM)%
+    wpctl set-volume @DEFAULT_SINK@ $(get_nearest_divisible $REM)%
 fi
 

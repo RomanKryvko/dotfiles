@@ -5,7 +5,7 @@
 # hyprlock - screen locker
 # brightnessctl - brightness control
 # wl-gammarelay-rs - screen temperature control
-# pactl - volume control
+# wpctl - volume control
 # waybar - bar
 # rofi - application launcher
 # grim - screenshots
@@ -20,9 +20,9 @@ set $bindCode bindsym --to-code
 # font pango:DejaVu Sans Mono 8
 font pango: Ubuntu regular 14
 
-exec --no-startup-id conky -qdc $HOME/.config/conky/way-clock.conf
-
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+
+exec --no-startup-id conky -qdc $HOME/.config/conky/way-clock.conf
 
 exec wl-gammarelay-rs
 
@@ -41,11 +41,11 @@ input type:touchpad {
 input type:keyboard xkb_layout us,ru,ua
 bindsym --release --locked $mod+Shift_L exec "swaymsg 'input type:keyboard xkb_switch_layout next'"
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+# Use wpctl to adjust volume in wireplumber.
+bindsym --locked XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
+bindsym --locked XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym --locked XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_SOURCE@ toggle
 
 # Control brightness
 bindsym --locked XF86MonBrightnessUp exec brightnessctl s +5%
