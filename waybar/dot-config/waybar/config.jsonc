@@ -12,6 +12,14 @@
         "orientation": "horizontal",
         "modules": [ "battery", "upower", "power-profiles-daemon" ]
     },
+    "group/load" : {
+        "drawer": {
+            "click-to-reveal": true,
+            "children-class": "load-child"
+        },
+        "orientation": "horizontal",
+        "modules": [ "cpu", "temperature", "custom/gpu-temperature" ]
+    },
     "modules-left": [
         "sway/workspaces",
         "sway/scratchpad",
@@ -25,12 +33,22 @@
         "backlight",
         "custom/screen-temperature",
         "group/power",
-        "cpu",
+        "group/load",
         "memory",
         "sway/language",
         "clock",
         "tray"
     ],
+    "temperature": {
+        "format": "C: {temperatureC}°C",
+        "tooltip-format": "CPU temperature"
+    },
+    "custom/gpu-temperature": {
+        "exec": "nvidia-smi --query-gpu=temperature.gpu | tail -1",
+        "interval": 1,
+        "format": "G: {}°C",
+        "tooltip-format": "GPU temperature"
+    },
     "upower": {
         "icon-size": 20,
         "on-click": "",

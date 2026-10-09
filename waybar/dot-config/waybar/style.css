@@ -43,12 +43,15 @@ window#waybar {
     padding-left: 15px;
 }
 
+#load .load-child,
 #power .power-child {
     padding: 0;
     margin: 0;
     min-width: 0;
 }
 
+#load .load-child > #temperature,
+#load .load-child > #custom-gpu-temperature,
 #power .power-child > #upower,
 #power .power-child > #power-profiles-daemon {
     margin-top: 5px;
