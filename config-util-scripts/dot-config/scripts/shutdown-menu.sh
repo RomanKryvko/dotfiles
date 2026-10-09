@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 # CMDs
-uptime="`uptime -p | sed -e 's/up //g'`"
+uptime="`uptime | sed -e 's/^.*up[ \t].//' -e 's/,.*$//'`"
 host=`hostnamectl hostname`
 
 # Options
@@ -9,35 +9,49 @@ shutdown="  Shutdown"
 reboot="  Reboot"
 lock="  Lock"
 suspend="  Suspend"
-exit_i3="󰍃  Exit i3"
+log_out="󰍃  Log out"
 
 rofi_cmd() {
-	rofi -dmenu \
-		-p "$host" \
-		-mesg "Uptime: $uptime" \
-		-config ~/.config/rofi/powermenu.rasi
+    rofi -dmenu \
+        -p "$host" \
+        -mesg "Uptime: $uptime" \
+        -config ~/.config/rofi/powermenu.rasi
 }
 
-INPUT=$(echo -e "$lock\n$suspend\n$reboot\n$shutdown\n$exit_i3" | rofi_cmd)
+exit_cmd() {
+    case $XDG_SESSION_DESKTOP in
+        'sway')
+            swaymsg exit
+            ;;
+        'i3')
+            i3-msg exit
+            ;;
+        *)
+            loginctl kill-session $XDG_SESSION_ID
+            ;;
+    esac
+}
+
+INPUT=$(echo -e "$lock\n$suspend\n$reboot\n$shutdown\n$log_out" | rofi_cmd)
 
 case $INPUT in
-	$shutdown)
-	shutdown -P now
-	;;
+    $shutdown)
+        shutdown -P now
+        ;;
 
-	$suspend)
-	systemctl suspend
-	;;
-	
-	$reboot)
-	reboot
-	;;
+    $suspend)
+        systemctl suspend
+        ;;
 
-	$exit_i3)
-	i3-msg exit
-	;;
+    $reboot)
+        reboot
+        ;;
 
-	$lock)
-	loginctl lock-session
-	;;
+    $log_out)
+        exit_cmd
+        ;;
+
+    $lock)
+        loginctl lock-session
+        ;;
 esac
