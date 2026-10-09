@@ -4,6 +4,14 @@
     "position": "bottom",
     "height": 30,
     "spacing": 5,
+    "group/power" : {
+        "drawer": {
+            "click-to-reveal": true,
+            "children-class": "power-child"
+        },
+        "orientation": "horizontal",
+        "modules": [ "battery", "upower", "power-profiles-daemon" ]
+    },
     "modules-left": [
         "sway/workspaces",
         "sway/scratchpad",
@@ -16,13 +24,32 @@
         "network",
         "backlight",
         "custom/screen-temperature",
-        "battery",
+        "group/power",
         "cpu",
         "memory",
         "sway/language",
         "clock",
         "tray"
     ],
+    "upower": {
+        "icon-size": 20,
+        "on-click": "",
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-format": "{percentage}",
+        "tooltip-spacing": 20
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Profile: {profile}\nCPU driver: {cpu_driver}\nPlatform driver: {platform_driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": " ",
+            "performance": " ",
+            "balanced": " ",
+            "power-saver": " "
+        }
+    },
     "sway/workspaces": {
         "all-outputs": true,
         "sort-by-id": true,
