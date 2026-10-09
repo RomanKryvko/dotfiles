@@ -44,9 +44,10 @@ window#waybar {
     padding-left: 15px;
 }
 
+#custom-screen-temperature,
 #scratchpad,
 #network,
-#pulseaudio,
+#wireplumber,
 #backlight,
 #clock,
 #user,

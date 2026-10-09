@@ -1,4 +1,5 @@
 {
+    "on-sigusr1": "reload",
     "reload_style_on_change": true,
     "position": "bottom",
     "height": 30,
@@ -11,9 +12,10 @@
     "modules-center": [
     ],
     "modules-right": [
-        "pulseaudio",
+        "wireplumber#sink",
         "network",
         "backlight",
+        "custom/screen-temperature",
         "battery",
         "cpu",
         "memory",
@@ -21,6 +23,12 @@
         "clock",
         "tray"
     ],
+    "sway/workspaces": {
+        "all-outputs": true,
+        "sort-by-id": true,
+        "disable-scroll": true,
+        "disable-auto-back-and-forth": true
+    },
     "sway/language": {
         "hide-single-layout": true,
         "tooltip": true,
@@ -54,7 +62,10 @@
         "format": "{}%  "
     },
     "backlight": {
-        "format": "{percent}%  "
+        "format": "{percent}% 󰌵",
+        "scroll-step": 5,
+        "min-brightness": 5.0,
+        "tooltip": false
     },
     "battery": {
         "states": {
@@ -69,14 +80,22 @@
         "format-disconnected": "NET: DISC",
         "tooltip-format": "{essid} | {ipaddr}/{cidr}"
     },
-    "pulseaudio": {
-        "format": "󰕾  : OUT {volume}% | IN {format_source}",
-        "format-muted": "OUT 󰝟  | IN {format_source}",
-        "format-bluetooth": " : OUT {volume}% |  IN {format_source}",
-        "format-bluetooth-muted": " 󰝟  |  IN {format_source_muted}",
-        "format-source": "{volume}%",
-        "format-source-muted": " ",
-        "on-click": "pwvucontrol"
+    "wireplumber#sink": {
+        "format": "{volume}% 󰕾",
+        "format-muted": "󰝟",
+        "on-click": "pwvucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5,
+        "max-volume": 150
+    },
+    "custom/screen-temperature": {
+        "format": "{icon} {text}",
+        "format-icons": ["", ""],
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/temp-watch.sh",
+        "on-click": "~/.config/waybar/scripts/temp-toggle.sh",
+        "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +200",
+        "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -200"
     },
     "user": {
         "format": "  {user} | up {work_H}:{work_M}"
