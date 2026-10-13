@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 # CMDs
-uptime="`uptime | sed -e 's/^.*up[ \t].//' -e 's/,.*$//'`"
+uptime="`uptime | sed -e 's/^.*up[ \t]//' -e 's/,.*$//'`"
 host=`hostnamectl hostname`
 
 # Options
