@@ -28,6 +28,7 @@
     "modules-center": [
     ],
     "modules-right": [
+        "mpris",
         "wireplumber#sink",
         "network",
         "backlight",
@@ -39,6 +40,16 @@
         "clock",
         "tray"
     ],
+    "mpris": {
+        "format": "{player_icon}",
+        "format-paused": "{status_icon}",
+        "player-icons": {
+            "default": "▶"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        }
+    },
     "temperature": {
         "format": "C: {temperatureC}°C",
         "tooltip-format": "CPU temperature"

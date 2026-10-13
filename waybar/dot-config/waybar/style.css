@@ -62,6 +62,7 @@ window#waybar {
     color: @foreground;
 }
 
+#mpris,
 #custom-screen-temperature,
 #scratchpad,
 #network,
