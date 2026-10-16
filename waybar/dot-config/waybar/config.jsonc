@@ -47,7 +47,7 @@
             "default": "▶"
         },
         "status-icons": {
-            "paused": "⏸"
+            "paused": "󰏤"
         }
     },
     "temperature": {
