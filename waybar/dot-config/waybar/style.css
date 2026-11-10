@@ -50,10 +50,10 @@ window#waybar {
     min-width: 0;
 }
 
-#load .load-child > #temperature,
-#load .load-child > #custom-gpu-temperature,
-#power .power-child > #upower,
-#power .power-child > #power-profiles-daemon {
+#temperature,
+#custom-gpu-temperature,
+#upower,
+#power-profiles-daemon {
     margin-top: 5px;
     margin-left: 6px;
     padding: 0 10px;
